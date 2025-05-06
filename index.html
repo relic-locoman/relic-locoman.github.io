@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Anonymous Project</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <div id="auth">
+    <h2>Enter paper ID to access the project:</h2>
+    <input type="password" id="pwd">
+    <button onclick="checkPassword()">Submit</button>
+    <p id="msg" style="color:red;"></p>
+  </div>
+
+  <div id="content" style="display:none;">
+    <h1>Relic: Anonymous Project</h1>
+    <p>This content is accessible only with the correct paper ID.</p>
+    
+    <!-- Video element replacing the image -->
+    <video width="400" controls>
+      <source src="static/videos/ball.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+    <!-- Add more content here -->
+  </div>
+
+  <script>
+    const PASSWORD = "1234";  // <-- Change this to your actual paper ID
+
+    function checkPassword() {
+      const input = document.getElementById("pwd").value;
+      if (input === PASSWORD) {
+        document.getElementById("auth").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        document.getElementById("msg").innerText = "Incorrect password.";
+      }
+    }
+  </script>
+</body>
+</html>
