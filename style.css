@@ -3,7 +3,12 @@
    ------------------------------------------------------------------*/
    @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@300;700&display=swap");
 
-   html,body{margin:0;padding:0}
+   html,body{
+     margin:0;
+     padding:0;
+     overflow-x: hidden;
+     width: 100%;
+   }
    body{
      background:#fdfaf4;
      font-family:'Playfair Display',serif;
@@ -17,10 +22,38 @@
       HERO  (always fills viewport – no white bars)
       ------------------------------------------------------------------*/
    header.full-page-image{height:100vh;width:100%;position:relative;overflow:hidden}
-   #bg-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease}
+   /* 👇 overlay to darken the video */
+   header.full-page-image .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.28);z-index:-1}
+   header.full-page-image .bottom-overlay{
+     position:absolute;
+     bottom:0;
+     left:0;
+     width:100%;
+     height:40%;
+     background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+     z-index:1;
+     display: flex;
+     align-items: flex-end;
+     padding-bottom: 40px;
+   }
+   header.full-page-image .bottom-overlay h1 {
+     margin: 0;
+     color: white;
+   }
+   #bg-video{
+     position:absolute;
+     top:0;
+     left:0;
+     width:100%;
+     height:100%;
+     object-fit:cover;
+     opacity:0;
+     transition:opacity 1s ease;
+     z-index:-1
+    }
    
    /* ------------------------------------------------------------------
-      TABLE‑OF‑CONTENTS  (show on ≥ 1000 px)
+      TABLE‑OF‑CONTENTS  (show on ≥ 1000 px)
       ------------------------------------------------------------------*/
    .toc{
      width:180px;
@@ -45,7 +78,12 @@
    .main-content{max-width:960px;margin:0 auto}
    .main-content,.hero-text,.sub-hero-text,.authors,.quick-links,.section,.figure-caption,.bibtex-code{position:relative;z-index:2}
    .hero-text{font-size:60px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin:0 0 10px}
-   .sub-hero-text{font-size:40px;font-weight:400;line-height:1.2;margin:0 0 50px}
+   .sub-hero-text{
+     font-size:40px;
+     font-weight:400;
+     line-height:1.2;
+     margin:60px 0 50px;
+   }
    
    /* AUTHORS */
    .authors{font-family:'Roboto Mono',monospace;font-size:16px;color:#333;line-height:1.6;margin:-32.5px 0 17.5px;text-align:left}
@@ -93,3 +131,4 @@
    .bibtex-title{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:1.15em;margin:0 0 10px;color:#f1f1f1}
    .bibtex-code pre{white-space:pre-wrap;overflow-wrap:break-word;margin:0}
    .bibtex-code code{font-family:'Courier New',Courier,monospace;overflow-wrap:break-word}
+   

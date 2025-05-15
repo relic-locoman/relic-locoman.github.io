@@ -11,62 +11,46 @@
 </head>
 <body>
   <!-- ============================================================ -->
-  <!--  PASSWORD GATE                                               -->
+  <!--  PASSWORD GATE                                               -->
   <!-- ============================================================ -->
   <div id="auth" style="text-align:center;margin-top:20vh;">
     <h2>Enter paper‑ID to access the site</h2>
-    <input type="password" id="pwd" placeholder="Paper ID" />
+    <input type="password" id="pwd" placeholder="Paper ID" />
     <button onclick="checkPassword()" style="margin-left:8px;">Submit</button>
     <p id="msg" style="color:#c00;margin-top:6px;"></p>
   </div>
 
   <!-- ============================================================ -->
-  <!--  MAIN CONTENT (hidden until correct password)                 -->
+  <!--  MAIN CONTENT (hidden until correct password)                 -->
   <!-- ============================================================ -->
   <div id="content" style="display:none;">
     <!-- HERO -->
     <header class="full-page-image" id="hero">
       <video id="bg-video" preload="metadata" autoplay muted playsinline loop>
-        <source src="assets/videos/full_screen.mp4" type="video/mp4" />
+        <source src="assets/videos/ball.mp4" type="video/mp4" />
       </video>
       <div class="overlay"></div>
-      <div class="content" style="padding:0 24px;">
+      <div class="bottom-overlay" style="padding:0 24px;">
         <h1><span style="font-variant-caps:all-small-caps;">ReLIC</span><br/>Versatile Loco-Manipulation through Flexible Interlimb Coordination</h1>
       </div>
     </header>
-
-
+    
     <!-- MAIN CONTENT BODY -->
     <main class="main-content">
       <!-- <div class="hero-text">Versatile Loco-Manipulation through Flexible Interlimb Coordination</div> -->
+
       <div class="sub-hero-text">Versatile Loco-Manipulation through Flexible Interlimb Coordination</div>
 
       <div class="authors">CoRL 2025 Submission 925<br/></div>
 
-      <!-- <div class="quick-links"><a href="paper.pdf" target="_blank">[pdf]</a><a href="#" onclick="return false;">[arXiv (after review)]</a><a href="#" onclick="return false;">[code (after review)]</a></div> -->
+      <!-- <div class="quick-links"><a href="paper.pdf" target="_blank">[pdf]</a><a href="#" onclick="return false;">[arXiv (after review)]</a><a href="#" onclick="return false;">[code (after review)]</a></div> -->
+      
+      <div class="tagline" id="video-gallery-title">Interlimb Coordinations.</div>
 
-      <div class="tagline" id="abstract">Abstract.</div>
-      <div class="section">
-        <p>
-          The ability to flexibly leverage limbs for loco-manipulation is essential for enabling autonomous robots to
-          operate in unstructured environments. Yet, prior work on loco-manipulation is often constrained to specific
-          tasks or predetermined limb configurations. In this work, we present ReLIC, an approach that enables versatile 
-          loco-manipulation through flexible interlimb coordination. The key to our approach is an adaptive controller 
-          that seamlessly bridges the execution of manipulation motions and the generation of stable gaits based on task demands. 
-          Through the interplay between two controller modules, ReLIC dynamically assigns each limb for manipulation or locomotion 
-          and robustly coordinates them to achieve the task success. Using efficient reinforcement learning in simulation, 
-          ReLIC learns to perform stable gaits in accordance with the manipulation goals in the real world.
-          To solve diverse and complex tasks, we further propose to interface the learned controller with different types of task 
-          specifications, including target trajectories, contact points, and natural language instructions. Evaluated on 12 real-world 
-          tasks that require diverse and complex coordination patterns, ReLIC demonstrates its versatility and robustness by achieving 
-          a success rate of 78.9% on average.
-        </p>
-      </div>
-
-      <!-- Video Gallery Section - STAIRS VIDEOS -->
-      <div class="video-gallery-section" id="Mobile Interlimb Coordination">
+      <!-- Video Gallery Section - mobile interlimb coordination -->
+      <div class="video-gallery-section" id="gallery-section-mobileinterlimb">
         <div class="video-gallery-container">
-          <div class="video-gallery" id="videoGalleryStairs">
+          <div class="video-gallery" id="mobileinterlimb">
             <!-- Videos remain here - ADD autoplay -->
             <video class="gallery-video" src="assets/videos/yogaball.mp4" autoplay muted playsinline loop></video>
             <video class="gallery-video" src="assets/videos/box.mp4" autoplay muted playsinline loop></video>
@@ -76,78 +60,120 @@
         <!-- Container for the caption AND buttons -->
         <div class="gallery-caption-container">
             <!-- Move button controls INSIDE caption container -->
-            <div class="gallery-nav-controls">
-                <button class="gallery-nav left" id="scrollLeftBtnStairs">&lt;</button>
-                <button class="gallery-nav right" id="scrollRightBtnStairs">&gt;</button>
-            </div>
+            <!-- <div class="gallery-nav-controls">
+                <button class="gallery-nav left" id="scrollLeftBtnMobileInterlimb">&lt;</button>
+                <button class="gallery-nav right" id="scrollRightBtnMobileInterlimb">&gt;</button>
+            </div> -->
             <!-- Caption text -->
             <p class="figure-caption gallery-caption">
-                <b>Mobile interlimb coordination:</b> Test the robot’s ability to manipulate large objects using its arm and one leg while navigating with the remaining three legs.
+                <b>Mobile interlimb coordination:</b> Test the robot's ability to manipulate large objects using its arm and one leg while navigating with the remaining three legs.
             </p>
         </div>
       </div>
     <!-- End Video Gallery Section -->
-    <!-- Video Gallery Section - SITTING VIDEOS -->
-    <div class="video-gallery-section" id="gallery-section-anchor">
+    <!-- Video Gallery Section - Stationary interlimb coordination -->
+    <div class="video-gallery-section" id="gallery-section-stationaryinterlimb">
       <div class="video-gallery-container">
-        <div class="video-gallery" id="videoGallerySitting">
+        <div class="video-gallery" id="videoGalleryStationaryInterlimbRow1">
           <!-- Videos remain here - ADD autoplay -->
-          <video class="gallery-video" src="./sitting/5.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./sitting/3.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./sitting/1.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./sitting/2.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./sitting/4.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./sitting/0.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/tirepump.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/trashbin.mp4" autoplay muted playsinline loop></video>
+        </div>
+        <div class="video-gallery" id="videoGalleryStationaryInterlimbRow2">
+          <video class="gallery-video" src="assets/videos/dexbox.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/smallbin.mp4" autoplay muted playsinline loop></video>
           <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
         </div>
       </div>
       <!-- Container for the caption AND buttons -->
       <div class="gallery-caption-container">
           <!-- Move button controls INSIDE caption container -->
-          <div class="gallery-nav-controls">
-              <button class="gallery-nav left" id="scrollLeftBtnSitting">&lt;</button>
-              <button class="gallery-nav right" id="scrollRightBtnSitting">&gt;</button>
-          </div>
+          <!-- <div class="gallery-nav-controls">
+              <button class="gallery-nav left" id="scrollLeftBtnStationaryInterlimb">&lt;</button>
+              <button class="gallery-nav right" id="scrollRightBtnStationaryInterlimb">&gt;</button>
+          </div> -->
           <!-- Caption text -->
           <p class="figure-caption gallery-caption">
-              <b>Sitting/Standing:</b> Our robot demonstrates smooth sitting and standing behaviors on different chairs and benches, adapting to object heights and shapes.
+              <b>Stationary interlimb coordination:</b> the robot coordinates its arm with one designated leg for object manipulation while maintaining balance through static support from the remaining three legs.
           </p>
       </div>
     </div>
     <!-- End Video Gallery Section -->
 
-    <!-- Video Gallery Section - TRAVERSING VIDEOS -->
-      <div class="video-gallery-section" id="traversingGallerySection">
+    <!-- Video Gallery Section - Foot-assisted manipulation -->
+      <div class="video-gallery-section" id="gallery-section-footassistedmanipulation">
         <div class="video-gallery-container">
-          <div class="video-gallery" id="videoGalleryTraversing">
+          <div class="video-gallery" id="videoGalleryFootAssistedManipulationRow1">
             <!-- Videos remain here - ADD autoplay -->
-            <video class="gallery-video" src="./traversing/1.mp4" autoplay muted playsinline loop></video>
-            <video class="gallery-video" src="./traversing/5.mp4" autoplay muted playsinline loop></video>
-            <video class="gallery-video" src="./traversing/7.mp4" autoplay muted playsinline loop></video>
-            <video class="gallery-video" src="./traversing/4.mp4" autoplay muted playsinline loop></video>
-            <video class="gallery-video" src="./traversing/2.mp4" autoplay muted playsinline loop></video>
-            <video class="gallery-video" src="./traversing/6.mp4" autoplay muted playsinline loop></video>
-            <video class="gallery-video" src="./traversing/3.mp4" autoplay muted playsinline loop></video>
-            <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
+            <video class="gallery-video" src="assets/videos/toolchest.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/storagebin.mp4" autoplay muted playsinline loop></video>
+          </div>
+          <div class="video-gallery" id="videoGalleryFootAssistedManipulationRow2">
+            <video class="gallery-video" src="assets/videos/chair.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/basket.mp4" autoplay muted playsinline loop></video>
+          </div>
+          <div class="video-gallery" id="videoGalleryFootAssistedManipulationRow3">
+            <video class="gallery-video" src="assets/videos/drawer.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/laundrybag.mp4" autoplay muted playsinline loop></video>
           </div>
         </div>
         <!-- Container for the caption AND buttons -->
         <div class="gallery-caption-container">
             <!-- Move button controls INSIDE caption container -->
-            <div class="gallery-nav-controls">
+            <!-- <div class="gallery-nav-controls">
                 <button class="gallery-nav left" id="scrollLeftBtnTraversing">&lt;</button>
                 <button class="gallery-nav right" id="scrollRightBtnTraversing">&gt;</button>
-            </div>
+            </div> -->
             <!-- Caption text -->
             <p class="figure-caption gallery-caption">
-                <b>Terrain traversing:</b> Watch the humanoid navigate diverse terrains, including uneven ground, slopes, and stepping over small obstacles.
+                <b>Foot-assisted manipulation:</b> tasks can be completed using only the arm, incorporating an additional leg as a216
+                manipulator demonstrates measurable performance improvements in stability and task execution.
             </p>
         </div>
       </div>
     <!-- End Video Gallery Section -->
+    <div class="tagline" id="abstract">Abstract.</div>
+    <div class="section">
+      <p>
+        The ability to flexibly leverage limbs for loco-manipulation is essential for enabling autonomous robots to
+        operate in unstructured environments. Yet, prior work on loco-manipulation is often constrained to specific
+        tasks or predetermined limb configurations. In this work, we present ReLIC, an approach that enables versatile 
+        loco-manipulation through flexible interlimb coordination. The key to our approach is an adaptive controller 
+        that seamlessly bridges the execution of manipulation motions and the generation of stable gaits based on task demands. 
+        Through the interplay between two controller modules, ReLIC dynamically assigns each limb for manipulation or locomotion 
+        and robustly coordinates them to achieve the task success. Using efficient reinforcement learning in simulation, 
+        ReLIC learns to perform stable gaits in accordance with the manipulation goals in the real world.
+        To solve diverse and complex tasks, we further propose to interface the learned controller with different types of task 
+        specifications, including target trajectories, contact points, and natural language instructions. Evaluated on 12 real-world 
+        tasks that require diverse and complex coordination patterns, ReLIC demonstrates its versatility and robustness by achieving 
+        a success rate of 78.9% on average.
+      </p>
+    </div>
 
+    <div class="tagline" id="methods">Methods.</div>
+    <div class="section">
+      <img src="assets/images/methods.png" alt="Methods overview diagram" style="width: 100%; margin: 20px 0 40px 0;">
+    </div>
+    
+    <div class="tagline" id="ablations">Ablations.</div>
+      <div class="video-gallery-section" id="gallery-section-multi_limb_co_tracking">
+        <div class="video-gallery-container">
+          <div class="video-gallery" id="multi_limb_co_tracking">
+            <!-- Videos remain here - ADD autoplay -->
+            <video class="gallery-video" src="assets/videos/ablations/multi_limb_co_tracking.mp4" autoplay muted playsinline loop></video>
+            <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
+          </div>
+        </div>
+        <!-- Container for the caption AND buttons -->
+        <div class="gallery-caption-container">
+            <!-- Caption text -->
+            <p class="figure-caption gallery-caption">
+                <b>Multi-limb Co-Tracking:</b> Captions.
+            </p>
+        </div>
+      </div>
     </main>
-    <footer class="footer">© CoRL 2025 Anonymous Authors | Webpage using code from TRANSIC & VideoMimic.</footer>
+    <footer class="footer">© CoRL 2025 Anonymous Authors | Webpage using code from TRANSIC & VideoMimic.</footer>
   </div>
 
   <!-- ============================================================ -->
