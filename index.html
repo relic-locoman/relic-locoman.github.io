@@ -152,15 +152,18 @@
 
     <div class="tagline" id="methods">Methods.</div>
     <div class="section">
-      <img src="assets/images/methods.png" alt="Methods overview diagram" style="width: 100%; margin: 20px 0 40px 0;">
+      <img src="assets/images/methods.gif" alt="Methods overview diagram" style="width: 100%; margin: 20px 0 40px 0;" loading="eager" decoding="async">
     </div>
     
+    <!-- Start of Ablations -->
     <div class="tagline" id="ablations">Ablations.</div>
+      <!-- Multi-limb Co-Tracking -->
       <div class="video-gallery-section" id="gallery-section-multi_limb_co_tracking">
         <div class="video-gallery-container">
           <div class="video-gallery" id="multi_limb_co_tracking">
             <!-- Videos remain here - ADD autoplay -->
-            <video class="gallery-video" src="assets/videos/ablations/multi_limb_co_tracking.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/ablations/multi_limb_co_tracking1.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/ablations/multi_limb_co_tracking2.mp4" autoplay muted playsinline loop></video>
             <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
           </div>
         </div>
@@ -172,26 +175,87 @@
             </p>
         </div>
       </div>
+      <!-- Gait Transition -->
+      <div class="video-gallery-section" id="gallery-section-gait_transition">
+        <div class="video-gallery-container">
+          <div class="video-gallery" id="gait_transition">
+            <!-- Videos remain here - ADD autoplay -->
+            <video class="gallery-video" src="assets/videos/ablations/gait_transition1.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/ablations/gait_transition2.mp4" autoplay muted playsinline loop></video>
+          </div>
+        </div>
+        <!-- Container for the caption AND buttons -->
+        <div class="gallery-caption-container">
+            <!-- Caption text -->
+            <p class="figure-caption gallery-caption">
+                <b>Gait Transition:</b> Captions.
+            </p>
+        </div>
+      </div>
+      <!-- Stability -->
+      <div class="video-gallery-section" id="gallery-section-stability">
+        <div class="video-gallery-container">
+          <div class="video-gallery" id="stability">
+            <!-- Videos remain here - ADD autoplay -->
+            <video class="gallery-video" src="assets/videos/ablations/stability1.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/ablations/stability2.mp4" autoplay muted playsinline loop></video>
+          </div>
+        </div>
+        <!-- Container for the caption AND buttons -->
+        <div class="gallery-caption-container">
+            <!-- Caption text -->
+            <p class="figure-caption gallery-caption">
+                <b>Stability:</b> Captions.
+            </p>
+        </div>
+      </div>
+    <!-- End of Ablations -->
+    <!-- Start of Failures -->
+    <div class="tagline" id="failures">Failures.</div>
+    <div class="video-gallery-section" id="gallery-section-failures">
+      <div class="video-gallery-container">
+        <div class="video-gallery" id="failures">
+          <!-- Videos remain here - ADD autoplay -->
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case1.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case2.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case3.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case4.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case5.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case6.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case7.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case8.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case9.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case10.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case11.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/failure_cases/failure_case12.mp4" autoplay muted playsinline loop></video>
+        </div>
+      </div>
+      <!-- Container for the caption AND buttons -->
+      <div class="gallery-caption-container">
+        <!-- Move button controls INSIDE caption container -->
+        <div class="gallery-nav-controls">
+            <button class="gallery-nav left" id="scrollLeftBtnFailures">&lt;</button>
+            <button class="gallery-nav right" id="scrollRightBtnFailures">&gt;</button>
+        </div>
+        <!-- Caption text -->
+        <p class="figure-caption gallery-caption">
+            <b>Failures:</b> Captions.
+        </p>
+      </div>
+    </div>
+    <!-- End of Failures -->
+    
+    
+    <!-- End of main content -->
     </main>
-    <footer class="footer">© CoRL 2025 Anonymous Authors | Webpage using code from TRANSIC & VideoMimic.</footer>
+    <footer class="footer">© CoRL 2025 Anonymous Authors.</footer>
   </div>
 
   <!-- ============================================================ -->
   <!--  JS                                                          -->
   <!-- ============================================================ -->
-  <script>
-    const PASSWORD="925";
-    function checkPassword(){const v=document.getElementById("pwd").value.trim();if(v===PASSWORD){document.getElementById("auth").style.display="none";document.getElementById("content").style.display="block";startHero();}else{document.getElementById("msg").innerText="Incorrect password.";}}
-    function startHero(){const vid=document.getElementById('bg-video');if(!vid)return;vid.play().catch(()=>{});vid.style.opacity=1;}
-  </script>
-  <script>
-    // gallery buttons (leave as‑is)
-    document.addEventListener('DOMContentLoaded',()=>{
-      const c=document.querySelector('#demoGallerySection .video-gallery-container');
-      if(!c)return;
-      document.getElementById('scrollLeftBtnDemo').onclick=()=>c.scrollBy({left:-350,behavior:'smooth'});
-      document.getElementById('scrollRightBtnDemo').onclick=()=>c.scrollBy({left:350,behavior:'smooth'});
-    });
-  </script>
+  <script src="assets/js/password.js"></script>
+  <script src="assets/js/full_screen_video.js"></script>
+  <script src="assets/js/scroll_button.js"></script>
 </body>
 </html>
