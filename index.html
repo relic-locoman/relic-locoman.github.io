@@ -53,7 +53,7 @@
           <div class="video-gallery" id="mobileinterlimb">
             <!-- Videos remain here - ADD autoplay -->
             <video class="gallery-video" src="assets/videos/yogaball.mp4" autoplay muted playsinline loop></video>
-            <video class="gallery-video" src="assets/videos/box.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/shippingbox.mp4" autoplay muted playsinline loop></video>
             <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
           </div>
         </div>
@@ -66,7 +66,7 @@
             </div> -->
             <!-- Caption text -->
             <p class="figure-caption gallery-caption">
-                <b>Mobile interlimb coordination:</b> Test the robot's ability to manipulate large objects using its arm and one leg while navigating with the remaining three legs.
+                <b>Mobile Interlimb Coordination:</b> Test the robot's ability to manipulate large objects using its arm and one leg while navigating with the remaining three legs.
             </p>
         </div>
       </div>
@@ -80,7 +80,7 @@
           <video class="gallery-video" src="assets/videos/trashbin.mp4" autoplay muted playsinline loop></video>
         </div>
         <div class="video-gallery" id="videoGalleryStationaryInterlimbRow2">
-          <video class="gallery-video" src="assets/videos/dexbox.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="assets/videos/deckbox.mp4" autoplay muted playsinline loop></video>
           <video class="gallery-video" src="assets/videos/smallbin.mp4" autoplay muted playsinline loop></video>
           <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
         </div>
@@ -94,7 +94,7 @@
           </div> -->
           <!-- Caption text -->
           <p class="figure-caption gallery-caption">
-              <b>Stationary interlimb coordination:</b> the robot coordinates its arm with one designated leg for object manipulation while maintaining balance through static support from the remaining three legs.
+              <b>Stationary Interlimb Coordination:</b> the robot coordinates its arm with one designated leg for object manipulation while maintaining balance through static support from the remaining three legs.
           </p>
       </div>
     </div>
@@ -126,7 +126,7 @@
             </div> -->
             <!-- Caption text -->
             <p class="figure-caption gallery-caption">
-                <b>Foot-assisted manipulation:</b> tasks can be completed using only the arm, incorporating an additional leg as a216
+                <b>Foot-assisted Manipulation:</b> tasks can be completed using only the arm, incorporating an additional leg as a216
                 manipulator demonstrates measurable performance improvements in stability and task execution.
             </p>
         </div>
@@ -152,7 +152,15 @@
 
     <div class="tagline" id="methods">Methods.</div>
     <div class="section">
-      <img src="assets/images/methods.gif" alt="Methods overview diagram" style="width: 100%; margin: 20px 0 40px 0;" loading="eager" decoding="async">
+      <img src="assets/images/method.gif" alt="Methods overview diagram" style="width: 100%; margin: 20px 0 20px 0;" loading="eager" decoding="async">
+      <p class="figure-caption">
+        <b>Reinforcement Learning for Interlimb Coordination (ReLIC):</b> Based on various types of task specifications, ReLIC enables the
+        robot to perform versatile loco-manipulation. Conditioned on the dynamic assignment of limb functions,
+        the ReLIC controller generates the actions through the interplay between a model-based module that
+        prioritizes task success, and an RL policy that robustly maintain stable gaits in accordance
+        with the manipulation behaviors. This design decouples the two challenging subproblems without
+        relying on rigid heuristics or sacrificing inter-module coordination.
+      </p>
     </div>
     
     <!-- Start of Ablations -->

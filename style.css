@@ -115,6 +115,15 @@
    .gallery-nav:hover{background:#000}
    .gallery-caption-container{max-width:960px;margin:15px auto 0;padding:0 20px;display:flex;align-items:flex-start;justify-content:center}
    .figure-caption.gallery-caption{flex:1;margin:0;text-align:left;font-family:'Roboto Mono',monospace;font-size:14px;color:#555}
+   .figure-caption {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+      margin-top: 1px; /* Space above caption */
+      margin-bottom: 36px; /* Space below caption, before next element */
+      padding: 0 20px; /* Add some horizontal padding */
+    }
    
    /* R2S LAYOUT – kept (unchanged) */
    .r2s-vertical-layout{display:flex;flex-direction:column;gap:10px;margin:0 0 5px;box-sizing:border-box}
