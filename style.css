@@ -102,7 +102,7 @@
    .quick-links a:hover{text-decoration:underline;color:#000}
    
    /* IMAGE DEFAULTS */
-   img{width:100%;border:1.5px solid #000;border-radius:15px;margin:0 20px;box-sizing:border-box}
+   img{width:100%;box-shadow:0 4px 12px rgba(0,0,0,.15);border-radius:15px;margin:0 20px;box-sizing:border-box}
    .main-content>img{margin:0}
    
    /* VIDEO GALLERY – unchanged core rules (trimmed for brevity) */
@@ -135,6 +135,23 @@
       margin-bottom: 36px; /* Space below caption, before next element */
       padding: 0 20px; /* Add some horizontal padding */
     }
+   /*.gallery-caption-row {*/
+   /*    display: flex;*/
+   /*    gap: 15px; !* Should match the gap in .r2s-video-row *!*/
+   /*    justify-content: center; !* Should match justify-content in .r2s-video-row *!*/
+   /*    margin-top: -15px; !* Small space between videos and captions *!*/
+   /*}*/
+
+   /*.gallery-caption-item {*/
+   /*    flex-grow: 1; !* Allow caption item to grow, similar to video slots *!*/
+   /*    flex-basis: 0;*/
+   /*    text-align: center; !* Center text within its slot *!*/
+   /*    font-size: 13px; !* Adjust as needed *!*/
+   /*    color: #555; !* Adjust as needed *!*/
+   /*    font-family: 'Roboto Mono', monospace;*/
+   /*    !* Optional: to better align with video slots if they have borders/padding *!*/
+   /*    !* padding: 0 5px; *!*/
+   /*}*/
    
    /* R2S LAYOUT – kept (unchanged) */
    .r2s-vertical-layout{display:flex;flex-direction:column;gap:10px;margin:0 0 5px;box-sizing:border-box}
