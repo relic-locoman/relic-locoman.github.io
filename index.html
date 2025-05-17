@@ -44,7 +44,25 @@
       <div class="authors">CoRL 2025 Submission 925<br/></div>
 
       <!-- <div class="quick-links"><a href="paper.pdf" target="_blank">[pdf]</a><a href="#" onclick="return false;">[arXiv (after review)]</a><a href="#" onclick="return false;">[code (after review)]</a></div> -->
-      
+
+      <div class="tagline" id="abstract">Abstract.</div>
+      <div class="section">
+        <p>
+          The ability to flexibly leverage limbs for loco-manipulation is essential for enabling autonomous robots to
+          operate in unstructured environments. Yet, prior work on loco-manipulation is often constrained to specific
+          tasks or predetermined limb configurations. In this work, we present ReLIC, an approach that enables versatile
+          loco-manipulation through flexible interlimb coordination. The key to our approach is an adaptive controller
+          that seamlessly bridges the execution of manipulation motions and the generation of stable gaits based on task demands.
+          Through the interplay between two controller modules, ReLIC dynamically assigns each limb for manipulation or locomotion
+          and robustly coordinates them to achieve the task success. Using efficient reinforcement learning in simulation,
+          ReLIC learns to perform stable gaits in accordance with the manipulation goals in the real world.
+          To solve diverse and complex tasks, we further propose to interface the learned controller with different types of task
+          specifications, including target trajectories, contact points, and natural language instructions. Evaluated on 12 real-world
+          tasks that require diverse and complex coordination patterns, ReLIC demonstrates its versatility and robustness by achieving
+          a success rate of 78.9% on average.
+        </p>
+      </div>
+
       <div class="tagline" id="video-gallery-title">Interlimb Coordinations.</div>
 
       <!-- Video Gallery Section - mobile interlimb coordination -->
@@ -131,24 +149,65 @@
             </p>
         </div>
       </div>
+
+      <div class="tagline" id="video-gallery-title-contact">Contact Points.</div>
+
+      <!-- Video Gallery Section - mobile interlimb coordination -->
+      <div class="video-gallery-section" id="gallery-section-contactpoints">
+        <div class="video-gallery-container">
+          <div class="video-gallery" id="contactPointsRow1">
+            <!-- Videos remain here - ADD autoplay -->
+            <video class="gallery-video" src="assets/videos/yogaball_contact.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/toolchest_contact.mp4" autoplay muted playsinline loop></video>
+            <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
+          </div>
+          <div class="video-gallery" id="contactPointsRow2">
+            <!-- Videos remain here - ADD autoplay -->
+            <video class="gallery-video" src="assets/videos/trashbin_contact.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/basket_contact.mp4" autoplay muted playsinline loop></video>
+            <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
+          </div>
+        </div>
+        <!-- Container for the caption AND buttons -->
+        <div class="gallery-caption-container">
+            <!-- Move button controls INSIDE caption container -->
+            <!-- <div class="gallery-nav-controls">
+                <button class="gallery-nav left" id="scrollLeftBtnMobileInterlimb">&lt;</button>
+                <button class="gallery-nav right" id="scrollRightBtnMobileInterlimb">&gt;</button>
+            </div> -->
+            <!-- Caption text -->
+            <p class="figure-caption gallery-caption">
+                <b>Contact Points:</b> tasks can be described through contact points and associated motion directions, from which target trajectories are computed via motion planning.
+            </p>
+        </div>
+      </div>
+
+      <div class="tagline" id="video-gallery-title-language">Language Instructions.</div>
+
+      <!-- Video Gallery Section - mobile interlimb coordination -->
+      <div class="video-gallery-section" id="gallery-section-language">
+        <div class="video-gallery-container">
+          <div class="video-gallery" id="language">
+            <!-- Videos remain here - ADD autoplay -->
+            <video class="gallery-video" src="assets/videos/yogaball_language.mp4" autoplay muted playsinline loop></video>
+            <video class="gallery-video" src="assets/videos/toolchest_language.mp4" autoplay muted playsinline loop></video>
+            <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
+          </div>
+        </div>
+        <!-- Container for the caption AND buttons -->
+        <div class="gallery-caption-container">
+            <!-- Move button controls INSIDE caption container -->
+            <!-- <div class="gallery-nav-controls">
+                <button class="gallery-nav left" id="scrollLeftBtnMobileInterlimb">&lt;</button>
+                <button class="gallery-nav right" id="scrollRightBtnMobileInterlimb">&gt;</button>
+            </div> -->
+            <!-- Caption text -->
+            <p class="figure-caption gallery-caption">
+                <b>Language Instructions:</b> ReLIC also supports free-form language instructions by leveraging vision-language models.
+            </p>
+        </div>
+      </div>
     <!-- End Video Gallery Section -->
-    <div class="tagline" id="abstract">Abstract.</div>
-    <div class="section">
-      <p>
-        The ability to flexibly leverage limbs for loco-manipulation is essential for enabling autonomous robots to
-        operate in unstructured environments. Yet, prior work on loco-manipulation is often constrained to specific
-        tasks or predetermined limb configurations. In this work, we present ReLIC, an approach that enables versatile 
-        loco-manipulation through flexible interlimb coordination. The key to our approach is an adaptive controller 
-        that seamlessly bridges the execution of manipulation motions and the generation of stable gaits based on task demands. 
-        Through the interplay between two controller modules, ReLIC dynamically assigns each limb for manipulation or locomotion 
-        and robustly coordinates them to achieve the task success. Using efficient reinforcement learning in simulation, 
-        ReLIC learns to perform stable gaits in accordance with the manipulation goals in the real world.
-        To solve diverse and complex tasks, we further propose to interface the learned controller with different types of task 
-        specifications, including target trajectories, contact points, and natural language instructions. Evaluated on 12 real-world 
-        tasks that require diverse and complex coordination patterns, ReLIC demonstrates its versatility and robustness by achieving 
-        a success rate of 78.9% on average.
-      </p>
-    </div>
 
     <div class="tagline" id="methods">Methods.</div>
     <div class="section">
