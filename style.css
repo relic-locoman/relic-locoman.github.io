@@ -75,7 +75,7 @@
    /* ------------------------------------------------------------------
       MAIN ARTICLE BLOCKS
       ------------------------------------------------------------------*/
-   .main-content{max-width:960px;margin:0 auto}
+   .main-content{max-width:1280px;margin:0 auto}
    .main-content,.hero-text,.sub-hero-text,.authors,.quick-links,.section,.figure-caption,.bibtex-code{position:relative;z-index:2}
    .hero-text{font-size:60px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin:0 0 10px}
    .sub-hero-text{
@@ -107,13 +107,24 @@
    
    /* VIDEO GALLERY – unchanged core rules (trimmed for brevity) */
    .video-gallery-section{margin:40px 0;width:100vw;position:relative;left:50%;transform:translateX(-50%)}
-   .video-gallery-container{box-sizing:border-box;max-width:1150px;margin:0 auto;overflow-x:auto;scroll-behavior:smooth}
+   .video-gallery-container{box-sizing:border-box;max-width:1350px;margin:0 auto;overflow-x:auto;scroll-behavior:smooth}
    .video-gallery-container::-webkit-scrollbar{display:none}
    .video-gallery{display:flex;gap:15px;padding:0 20px 10px;width:max-content;margin:0 auto}
-   .gallery-video{flex:0 0 auto;height:220px;width:auto;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);background:#fdfaf4}
+   .gallery-video{flex:0 0 auto;height:280px;width:auto;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,.15);background:#fdfaf4}
+
+   /* Single video gallery styles */
+   .video-gallery-container.single-video .video-gallery {
+     width: 100%;
+     justify-content: center;
+   }
+   .video-gallery-container.single-video .gallery-video {
+     height: 480px;
+     flex: 0 0 auto;
+     max-width: 85%;
+   }
    .gallery-nav{background:rgba(40,40,40,.8);color:#fff;border:none;border-radius:50%;width:35px;height:35px;font:700 20px/35px sans-serif;cursor:pointer;margin:0 5px}
    .gallery-nav:hover{background:#000}
-   .gallery-caption-container{max-width:960px;margin:15px auto 0;padding:0 20px;display:flex;align-items:flex-start;justify-content:center}
+   .gallery-caption-container{max-width:1280px;margin:15px auto 0;padding:0 20px;display:flex;align-items:flex-start;justify-content:center}
    .figure-caption.gallery-caption{flex:1;margin:0;text-align:left;font-family:'Roboto Mono',monospace;font-size:14px;color:#555}
    .figure-caption {
       font-family: 'Roboto Mono', monospace;
@@ -136,7 +147,7 @@
    .footer{font-size:14px;font-family:'Roboto Mono',monospace;color:#666;margin:80px 0 0;border-top:1px solid #ccc;padding:30px;text-align:center}
    
    /* BIBTEX BOX */
-   .bibtex-code{background:rgba(80,80,80,.8);color:#f1f1f1;padding:20px;border-radius:8px;max-width:1000px;margin:80px auto 0;font-size:14px;box-sizing:border-box}
+   .bibtex-code{background:rgba(80,80,80,.8);color:#f1f1f1;padding:20px;border-radius:8px;max-width:1280px;margin:80px auto 0;font-size:14px;box-sizing:border-box}
    .bibtex-title{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:1.15em;margin:0 0 10px;color:#f1f1f1}
    .bibtex-code pre{white-space:pre-wrap;overflow-wrap:break-word;margin:0}
    .bibtex-code code{font-family:'Courier New',Courier,monospace;overflow-wrap:break-word}
