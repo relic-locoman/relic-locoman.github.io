@@ -11,19 +11,21 @@
 </head>
 <body>
   <!-- ============================================================ -->
-  <!--  PASSWORD GATE                                               -->
+  <!--  PASSWORD GATE (commented out - no longer needed)            -->
   <!-- ============================================================ -->
+  <!-- 
   <div id="auth" style="text-align:center;margin-top:20vh;">
     <h2>Enter paper‑ID to access the site</h2>
     <input type="password" id="pwd" placeholder="Paper ID" />
     <button onclick="checkPassword()" style="margin-left:8px;">Submit</button>
     <p id="msg" style="color:#c00;margin-top:6px;"></p>
   </div>
+  -->
 
   <!-- ============================================================ -->
-  <!--  MAIN CONTENT (hidden until correct password)                 -->
+  <!--  MAIN CONTENT (now displayed by default)                     -->
   <!-- ============================================================ -->
-  <div id="content" style="display:none;">
+  <div id="content" style="display:block;">
     <!-- HERO -->
     <header class="full-page-image" id="hero">
       <video id="bg-video" preload="metadata" autoplay muted playsinline loop>
@@ -31,7 +33,11 @@
       </video>
       <div class="overlay"></div>
       <div class="bottom-overlay" style="padding:0 24px;">
-        <h1>ReLIC</span><br/>Versatile Loco-Manipulation through Flexible Interlimb Coordination</h1>
+        <h1>ReLIC<br/>Versatile Loco-Manipulation through Flexible Interlimb Coordination</h1>
+      </div>
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" onclick="scrollToContent()">
+        ↓
       </div>
     </header>
     
@@ -41,7 +47,7 @@
 
       <div class="sub-hero-text">Versatile Loco-Manipulation through Flexible Interlimb Coordination</div>
 
-      <div class="authors">CoRL 2025 Submission 925<br/></div>
+      <!-- <div class="authors">CoRL 2025 Submission 925<br/></div> -->
 
       <!-- <div class="quick-links"><a href="paper.pdf" target="_blank">[pdf]</a><a href="#" onclick="return false;">[arXiv (after review)]</a><a href="#" onclick="return false;">[code (after review)]</a></div> -->
 
@@ -318,7 +324,7 @@
     
     <!-- End of main content -->
     </main>
-    <footer class="footer">© CoRL 2025 Anonymous Authors.</footer>
+    <footer class="footer">© Anonymous Authors.</footer>
   </div>
 
   <!-- ============================================================ -->
