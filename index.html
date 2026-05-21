@@ -4,32 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ReLIC</title>
-  <meta name="robots" content="noindex, nofollow" />
 
-  <!-- ‑‑‑‑‑‑  STYLE SHEETS  ‑‑‑‑‑‑  -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ============================================================ -->
-  <!--  PASSWORD GATE (commented out - no longer needed)            -->
-  <!-- ============================================================ -->
-  <!-- 
-  <div id="auth" style="text-align:center;margin-top:20vh;">
-    <h2>Enter paper‑ID to access the site</h2>
-    <input type="password" id="pwd" placeholder="Paper ID" />
-    <button onclick="checkPassword()" style="margin-left:8px;">Submit</button>
-    <p id="msg" style="color:#c00;margin-top:6px;"></p>
-  </div>
-  -->
-
-  <!-- ============================================================ -->
-  <!--  MAIN CONTENT (now displayed by default)                     -->
-  <!-- ============================================================ -->
   <div id="content" style="display:block;">
     <!-- HERO -->
     <header class="full-page-image" id="hero">
-      <video id="bg-video" preload="metadata" autoplay muted playsinline loop>
-        <source src="assets/videos/teaser_ball_3x.mp4" type="video/mp4" />
+      <video id="bg-video" preload="auto" autoplay muted playsinline loop poster="assets/images/teaser_poster.jpg">
+        <source src="assets/videos/teaser_ball_3x_compressed.mp4" type="video/mp4" />
       </video>
       <div class="overlay"></div>
       <div class="bottom-overlay" style="padding:0 24px;">
@@ -47,9 +30,27 @@
 
       <div class="sub-hero-text">Versatile Loco-Manipulation through Flexible Interlimb Coordination</div>
 
-      <!-- <div class="authors">CoRL 2025 Submission 925<br/></div> -->
+         <!-- Add Authors -->
+      <div class="authors">
+        <a href="https://rolandzhu.github.io/" target="_blank">Xinghao Zhu</a><sup>*1</sup>, 
+        <a href="https://thomaschen98.github.io/" target="_blank">Yuxin Chen</a><sup>*12</sup>, 
+        <a href="https://lingfeng.moe/" target="_blank">Lingfeng Sun</a><sup>*1</sup>, 
+        <a href="https://www.linkedin.com/in/niroui/" target="_blank">Farzad Niroui</a><sup>1</sup>,
+        <a href="https://simon-lc.github.io/" target="_blank">Simon Le Cleac'h</a><sup>1</sup>, 
+        <a href="https://www.robo.guru/" target="_blank">Jiuguang Wang</a><sup>1</sup>,
+        <a href="https://kuanfang.github.io/" target="_blank">Kuan Fang</a><sup>13</sup>
+        <div class="affiliation"><sup>1</sup>RAI Institute&nbsp;&nbsp;&nbsp;<sup>2</sup>University of California, Berkeley&nbsp;&nbsp;&nbsp;<sup>3</sup>Cornell University</div>
 
-      <!-- <div class="quick-links"><a href="paper.pdf" target="_blank">[pdf]</a><a href="#" onclick="return false;">[arXiv (after review)]</a><a href="#" onclick="return false;">[code (after review)]</a></div> -->
+        <div class="equal-contribution"><i>*These authors contributed equally to this work</i></div>
+      </div>
+      
+      <div class="main-video-container" style="margin: 20px 0; text-align: center;">
+        <video style="width: 100%; max-width: 800px;" controls muted playsinline loop>
+          <source src="assets/videos/ReLIC.mp4" type="video/mp4" />
+        </video>
+      </div>
+      
+      <div class="quick-links"><a href="assets/relic-locoman.pdf" target="_blank">[pdf]</a><a href="https://www.arxiv.org/abs/2506.07876" target="_blank">[arXiv]</a><a href="https://github.com/rai-opensource/relic" target="_blank">[code]</a><a href="https://rai-inst.com/resources/blog/reinforcement-learning-for-flexible-loco-manipulation/" target="_blank">[blog]</a></div>
 
       <div class="tagline" id="abstract">Abstract</div>
       <div class="section">
@@ -321,17 +322,63 @@
     </div>
   <!-- End Video Gallery Section -->
     
+    <!-- BibTeX Section -->
+    <div class="tagline" id="bibtex">BibTeX</div>
+    <div class="section" style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+      <pre style="margin: 0; white-space: pre-wrap; font-family: monospace; font-size: 12px;">
+      @article{2025relic,
+        title={ReLIC: Versatile Loco-Manipulation through Flexible Interlimb Coordination},
+        author={Zhu, Xinghao and Chen, Yuxin and Sun, Lingfeng and Niroui, Farzad and Le Cleac'h, Simon and Wang, Jiuguang and Fang, Kuan},
+        journal={arXiv preprint arXiv:2506.07876},
+        year={2025}
+        }</pre>
+    </div>
     
     <!-- End of main content -->
     </main>
-    <footer class="footer">© Anonymous Authors.</footer>
+    <footer class="footer">Some website materials are adapted from  <a href="https://www.videomimic.net/" target="_blank">VideoMimic</a> and <a href="https://transic-robot.github.io/" target="_blank">TRANSIC</a></footer>
   </div>
 
   <!-- ============================================================ -->
   <!--  JS                                                          -->
   <!-- ============================================================ -->
-  <script src="assets/js/password.js"></script>
   <script src="assets/js/full_screen_video.js"></script>
   <script src="assets/js/scroll_button.js"></script>
+  <script>
+    // Lazy loading for gallery videos only
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create intersection observer
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const video = entry.target;
+            // Start playing when video comes into view
+            if (video.paused) {
+              video.play().catch(e => console.log('Video play failed:', e));
+            }
+          } else {
+            const video = entry.target;
+            // Pause when video goes out of view (saves bandwidth)
+            if (!video.paused) {
+              video.pause();
+            }
+          }
+        });
+      }, {
+        threshold: 0.2 // Start playing when 20% of video is visible
+      });
+
+      // Apply lazy loading only to gallery videos (not hero or main video)
+      const galleryVideos = document.querySelectorAll('.gallery-video');
+      galleryVideos.forEach(video => {
+        // Remove autoplay attribute and observe
+        video.removeAttribute('autoplay');
+        videoObserver.observe(video);
+        
+        // Set up video to be ready to play
+        video.load();
+      });
+    });
+  </script>
 </body>
 </html>

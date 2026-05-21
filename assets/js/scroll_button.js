@@ -2,24 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const galleries = [
     {
-      sectionId: 'gallery-section-multi_limb_co_tracking',
-      galleryInnerId: 'multi_limb_co_tracking',
-      scrollLeftBtnId: 'scrollLeftBtnMulti_limb_co_tracking',
-      scrollRightBtnId: 'scrollRightBtnMulti_limb_co_tracking'
-    },
-    {
-      sectionId: 'gallery-section-gait_transition',
-      galleryInnerId: 'gait_transition',
-      scrollLeftBtnId: 'scrollLeftBtnGait_transition',
-      scrollRightBtnId: 'scrollRightBtnGait_transition'
-    },
-    {
-      sectionId: 'gallery-section-stability',
-      galleryInnerId: 'stability',
-      scrollLeftBtnId: 'scrollLeftBtnStability',
-      scrollRightBtnId: 'scrollRightBtnStability'
-    },
-    {
       sectionId: 'gallery-section-failures',
       galleryInnerId: 'failures',
       scrollLeftBtnId: 'scrollLeftBtnFailures',
